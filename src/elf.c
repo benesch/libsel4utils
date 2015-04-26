@@ -55,7 +55,7 @@ load_segment(vspace_t *loadee_vspace, vspace_t *loader_vspace,
     int error = seL4_NoError;
 
     if (file_size > segment_size) {
-        LOG_ERROR("Error, file_size %zu > segment_size %zu", file_size, segment_size);
+        LOG_ERROR("Error, file_size %u > segment_size %u", file_size, segment_size);
         return seL4_InvalidArgument;
     }
 

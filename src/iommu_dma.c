@@ -120,7 +120,7 @@ static void* dma_alloc(void *cookie, size_t size, int align, int cached, ps_mem_
                     }
                     cookie = malloc(sizeof(*cookie));
                     if (!cookie) {
-                        LOG_ERROR("Failed to malloc %d bytes", sizeof(*cookie));
+                        LOG_ERROR("Failed to malloc %zu bytes", sizeof(*cookie));
                         vspace_free_reservation(dma->iospaces + i, res);
                         vka_cnode_delete(&copy_path);
                         vka_cspace_free(&dma->vka, copy_path.capPtr);
